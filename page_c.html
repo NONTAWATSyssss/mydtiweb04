@@ -7,7 +7,9 @@
   <title>Nontawat Profile 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <style>
     :root {
@@ -21,11 +23,13 @@
       --accent: #b7c0f5;
       --accent-text: #14163f;
       --pill-border: rgba(183, 192, 245, 0.55);
-      --max: 90%;
+      --max: 80%;
     }
 
     * {
       box-sizing: border-box;
+      padding: 0;
+      margin: 0;
     }
 
     html {
@@ -33,8 +37,6 @@
     }
 
     body {
-      margin: 0;
-      font-family: 'Noto Sans Thai', sans-serif;
       color: var(--text-body);
       background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-top) 30%, #10145c 55%, var(--bg-bottom) 100%);
       background-attachment: fixed;
@@ -43,7 +45,6 @@
 
     h1,
     h2 {
-      font-family: 'Anton', 'Noto Sans Thai', sans-serif;
       color: var(--text-main);
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -76,12 +77,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 40px;
+      padding: 20px 80px;
       margin: auto 40px;
     }
 
     .logo {
-      font-family: 'Anton', sans-serif;
+      font-family: 'Bebas Neue';
       color: #fff;
       font-size: 32px;
       letter-spacing: 1px;
@@ -89,6 +90,7 @@
     }
 
     .nav-links {
+      font-family: 'Inter';
       display: flex;
       gap: 32px;
       font-size: 16px;
@@ -105,23 +107,65 @@
     }
 
     /* ---------- Buttons & pills ---------- */
-    .btn {
+    .cta-row {
+      display: flex;
+      width: none;
+      align-items: center;
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    /* Hero Button */
+    .hero-btn {
+      font-family: 'Prompt';
+      font-weight: 700;
+      font-style: bold;
+      font-size: 16px;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 17px;
+      width: auto;
+      height: 54px;
       background: var(--accent);
       color: var(--accent-text);
-      font-weight: 700;
-      font-size: 0.85rem;
       letter-spacing: 0.8px;
       text-transform: uppercase;
-      padding: 14px 26px;
-      border-radius: 30px;
+      padding: 20px 20px;
+      border-radius: 100px;
       border: none;
       cursor: pointer;
     }
 
-    .btn .dot {
+    .hero-btn .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-text);
+      display: inline-block;
+    }
+
+    /* About Button */
+    .about-btn {
+      font-family: 'Prompt';
+      font-weight: 700;
+      font-style: bold;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      width: auto;
+      height: 54px;
+      background: var(--accent);
+      color: #0a0a0a;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 20px 20px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .about-btn .dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
@@ -130,20 +174,20 @@
     }
 
     .icon-circle {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
+      width: 54px;
+      height: 54px;
+      border-radius: 100%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--line);
-      color: #fff;
+      background: #222222;
+      border: none;
+      color: #7a99e9;
     }
 
     .icon-circle svg {
-      width: 18px;
-      height: 18px;
+      width: 26px;
+      height: 26px;
       fill: currentColor;
     }
 
@@ -153,16 +197,9 @@
     }
 
     .icon-plain svg {
-      width: 20px;
-      height: 20px;
+      width: 32px;
+      height: 32px;
       fill: currentColor;
-    }
-
-    .cta-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-top: 34px;
     }
 
     /* ---------- Section shell ---------- */
@@ -179,12 +216,8 @@
 
     .section-grid {
       display: grid;
-      grid-template-columns: 340px 1fr;
+      grid-template-columns: 1.1fr 1.2fr;
       gap: 60px;
-    }
-
-    .section-title {
-      font-size: 2.6rem;
     }
 
     /* ---------- Hero ---------- */
@@ -194,18 +227,14 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
-    }
-
-    .hero h1 {
-      font-size: 101px;
-      margin-bottom: 22px;
+      grid-template-columns: 1.1fr 1.1fr;
     }
 
     .hero p {
+      font-family: 'Prompt';
       max-width: 460px;
-      font-size: 1rem;
+      font-weight: 400;
+      font-size: 18px;
       color: var(--text-body);
     }
 
@@ -216,9 +245,9 @@
     }
 
     .hero-photo {
-      width: 100%;
-      aspect-ratio: 4/5;
-      border-radius: 6px;
+      width: 535px;
+      height: 669px;
+      border-radius: 27px;
       background: radial-gradient(circle at 50% 30%, #3a3f52, #101322 75%);
       background-size: cover;
       background-position: center;
@@ -233,23 +262,47 @@
     }
 
     /* ---------- About ---------- */
+    .section-head {
+      font-family: 'Bebas Neue';
+      font-size: 101px;
+      font-weight: 400;
+      letter-spacing: 2%;
+    }
+
     .about-lead {
-      font-size: 1.4rem;
-      color: #eef0fb;
-      font-weight: 600;
-      line-height: 1.5;
-      margin-bottom: 22px;
+      font-family: 'Prompt';
+      font-size: 32px;
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 140%;
+      letter-spacing: 1%;
+      margin-bottom: 16px;
     }
 
     .about-body {
-      font-size: 0.98rem;
-      max-width: 640px;
+      font-family: 'Prompt';
+      font-size: 18px;
+      font-weight: 400;
+      color: #c7c7c7;
+      line-height: 150%;
+      letter-spacing: 1%;
+      max-width: none;
     }
 
     .about-photo {
-      margin-top: 60px;
+      margin-top: 30px;
       width: 100%;
-      border-radius: 6px;
+      height: 709px;
+      border-radius: 25px;
+      background: radial-gradient(circle at 50% 30%, #3a3f52, #101322 75%);
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
       aspect-ratio: 21/9;
       overflow: hidden;
       background: linear-gradient(120deg, #2b2f45, #171a2c);
@@ -263,9 +316,55 @@
     }
 
     /* ---------- Capabilities ---------- */
+    .head-title {
+      font-family: 'Bebas Neue';
+      font-size: 76px;
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: 1%;
+    }
+
+    .work-title {
+      font-family: 'Manrope';
+    }
+
+    .work-title span {
+      font-size: 16px;
+      font-weight: 700;
+      font-style: bold;
+      line-height: 150%;
+      letter-spacing: 1%;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
     .cap-desc {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 1%;
       max-width: 620px;
-      font-size: 0.98rem;
+    }
+
+    .cap-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .cap-row {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .cap {
+      border: 1px solid #3a3f52;
+      border-radius: 25px;
+      padding: 30px;
+      width: 100%;
+      max-width: 620px;
     }
 
     .pill-rows {
@@ -301,60 +400,76 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 20px;
+      gap: 8px;
       flex-wrap: wrap;
     }
 
     .exp-role {
-      font-size: 1.25rem;
-      color: #fff;
-      font-weight: 700;
-      font-family: 'Noto Sans Thai', sans-serif;
+      font-family: 'Manrope';
+      font-size: 24px;
+      color: #ffffff;
+      font-weight: 500;
+      font-style: Medium;
+      line-height: 130%;
+      letter-spacing: 1%;
     }
 
     .exp-date {
+      font-family: 'Manrope';
       font-size: 0.9rem;
-      color: var(--text-muted);
-      white-space: nowrap;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      color: #aab0d9;
     }
 
     .exp-desc {
+      font-family: 'Manrope';
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: 1%;
       margin-top: 10px;
-      font-size: 0.95rem;
-      max-width: 680px;
+      max-width: auto;
     }
 
     /* ---------- Connect ---------- */
     .connect-grid {
       display: grid;
-      grid-template-columns: 340px 1fr;
+      grid-template-columns: 1fr 1.1fr;
       gap: 60px;
     }
 
     .connect-email {
-      color: #eef0fb;
-      font-size: 0.98rem;
+      font-family: 'Manrope';
+      font-weight: 400;
+      font-size: 18px;
+      color: #c7c7c7;
+      line-height: 150%;
+      letter-spacing: 1%;
       margin-top: 4px;
     }
 
-    .connect-email a {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
     .connect-resume {
-      font-size: 0.95rem;
-      margin-top: 6px;
+      font-family: 'Manrope';
+      font-size: 18px;
+      color: #c7c7c7;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: 1%;
+      margin-top: 4px;
     }
 
     .connect-resume a {
       text-decoration: underline;
-      color: #eef0fb;
+      color: #ffffff;
     }
 
     .connect-social {
       display: flex;
-      gap: 20px;
+      width: auto;
+      height: 32px;
+      gap: 24px;
       margin-top: 34px;
     }
 
@@ -365,16 +480,20 @@
     }
 
     .field label {
+      font-family: 'Manrope';
       display: block;
-      font-size: 0.9rem;
-      color: #c9cef0;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 160%;
+      letter-spacing: 1%;
+      color: #c7c7c7;
       margin-bottom: 10px;
     }
 
     .field input,
     .field textarea {
       width: 100%;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(1, 10, 58, 0.89);
       border: 1px solid var(--line);
       border-radius: 6px;
       padding: 14px 16px;
@@ -395,13 +514,34 @@
     }
 
     .submit-btn {
-      align-self: flex-start;
+      font-family: 'Manrope';
+      font-weight: 700;
+      font-style: bold;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 17px;
+      width: 140px;
+      height: 54px;
+      background: var(--accent);
+      color: #0a0a0a;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 20px 20px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
     }
 
     footer {
+      font-family: 'Prompt';
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 160%;
+      letter-spacing: 1%;
       text-align: center;
       padding: 36px 20px;
-      font-size: 0.85rem;
       color: var(--text-muted);
       border-top: 1px solid var(--line);
     }
@@ -426,12 +566,6 @@
         order: -1;
         max-width: 340px;
         margin: 0 auto;
-      }
-
-      .section-grid,
-      .connect-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
       }
 
       .hero h1 {
@@ -462,25 +596,27 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <h1>Hi, I am<br>Nontawt H.</h1>
+        <h1 class="section-head">Hi, I am<br>Nontawt H.</h1>
         <p>นักพัฒนาเว็บไซต์จากประเทศไทย ที่มีความหลงใหลในการสร้าง
           เว็บไซต์ที่เข้าถึงได้และเป็นมิตรกับผู้ใช้</p>
         <div class="cta-row">
-          <button class="btn">Contact me <span class="dot"></span></button>
+          <button class="hero-btn">Contact me <span class="dot"></span></button>
           <span class="icon-circle" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24">
+            <svg viewBox="0 0 24 24" style="margin-left: 9%;">
               <path
                 d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05C19.9 8 21 10.2 21 13.6V23h-4v-8.3c0-2-.03-4.5-2.75-4.5-2.75 0-3.17 2.15-3.17 4.35V23h-4V8z" />
             </svg>
           </span>
           <span class="icon-circle" aria-label="GitHub">
-            <i class="bi bi-github"></i>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.3 0 0 1-.3 3.4 1.2a11.8 11.8 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.7 1.7.2 3 .1 3.3.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z" />
+            </svg>
           </span>
         </div>
       </div>
       <div class="hero-photo">
-        <img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=800&q=80"
-          alt="รูปโปรไฟล์ของ Chanintorn C.">
+        <img src="./images/profile2.jpg" alt="">
       </div>
     </div>
   </section>
@@ -490,18 +626,18 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="wrap section-grid">
-      <h2 class="section-title">About me</h2>
+      <h2 class="section-head">About me</h2>
       <div>
-        <p class="about-lead">ผมเป็นนักพัฒนาเว็บไซต์ฝั่งฟรอนท์เอนด์ที่ทำงานอยู่ในกรุงเทพฯ
+        <p class="about-lead">ผมเป็นนักพัฒนาเว็บไซต์ที่ทำงานอยู่ในกรุงเทพฯ
           กำลังมองหาโอกาสที่น่าตื่นเต้นในการ ทำงานมีพื้นฐานการศึกษาด้านวิศวกรรมซอฟต์แวร์</p>
         <p class="about-body">ชอบให้ความสำคัญกับการเข้าถึง (accessibility) เมื่อพัฒนาเว็บไซต์
-          มีความกระตือรือร้นและอยากรู้อยากเห็นเกี่ยวกับการแก้ปัญหาต่างๆ ปัจจุบันกำลังศึกษาเรียนรู้เกี่ยวกับ React.js
-          และการออกแบบเว็บไซต์เล็กน้อยเมื่อไม่ได้เขียนโปรแกรม ดิฉัน/ผมชอบเล่นฟุตบอล ถ่ายภาพ และเล่นเกม FIFA, Diablo
+          มีความกระตือรือร้นและอยากรู้ อยากเห็นเกี่ยวกับการแก้ปัญหาต่างๆ ปัจจุบันกำลังศึกษาเรียนรู้เกี่ยวกับ React.js
+          และการออกแบบ เว็บไซต์เล็กน้อยเมื่อไม่ได้เขียนโปรแกรม ดิฉัน/ผมชอบเล่นฟุตบอล ถ่ายภาพ และเล่นเกม FIFA, Diablo
           กำลังเรียนรู้เพิ่มเติมเพื่อพัฒนาทักษะอยู่เสมอ</p>
         <div class="cta-row">
-          <button class="btn">Download resume <span class="dot"></span></button>
+          <button class="about-btn">Download resume <span class="dot"></span></button>
           <span class="icon-circle" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24">
+            <svg viewBox="0 0 24 24" style="margin-left: 9%;">
               <path
                 d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05C19.9 8 21 10.2 21 13.6V23h-4v-8.3c0-2-.03-4.5-2.75-4.5-2.75 0-3.17 2.15-3.17 4.35V23h-4V8z" />
             </svg>
@@ -528,11 +664,12 @@
   <!-- CAPABILITIES -->
   <section id="work">
     <div class="wrap section-grid">
-      <h2 class="section-title">My capabilities</h2>
+      <h2 class="head-title">My capabilities</h2>
       <div>
-        <p class="cap-desc">ผมมองหาโอกาสในการเพิ่มทักษะใหม่ๆ อยู่เสมอ ทั้งการพัฒนาฟรอนท์เอนด์ แบ็กเอนด์ การออกแบบ UX/UI
+        <p class="cap-desc work-title">ผมมองหาโอกาสในการเพิ่มทักษะใหม่ๆ อยู่เสมอ ทั้งการพัฒนา Frontend,Backend การออกแบบ
+          UX/UI
           ฐานข้อมูล</p>
-        <div class="pill-rows">
+        <div class="pill-rows work-title">
           <div class="pill-row">
             <span class="pill">HTML</span>
             <span class="pill">CSS</span>
@@ -555,14 +692,15 @@
   <!-- EXPERIENCE -->
   <section>
     <div class="wrap section-grid">
-      <h2 class="section-title">My experience</h2>
+      <h2 class="head-title">My experience</h2>
       <div>
         <div class="exp-item">
           <div class="exp-head">
             <span class="exp-role">Freelance Developer</span>
             <span class="exp-date">Nov 2023 — Present</span>
           </div>
-          <p class="exp-desc">พัฒนาและปรับปรุงส่วนติดต่อผู้ใช้สำหรับเว็บแอปพลิเคชันโดยใช้ React.js ทำงานร่วมกับทีมออกแบบ
+          <p class="exp-desc">พัฒนาและปรับปรุงส่วนติดต่อผู้ใช้สำหรับเว็บแอปพลิเคชันโดยใช้ React.js
+            ทำงานร่วมกับทีมออกแบบ
             UX/UI เพื่อสร้างประสบการณ์ผู้ใช้ที่น่าประทับใจ
             ปรับปรุงความเร็วในการโหลดเว็บไซต์ด้วยเทคนิคเพิ่มประสิทธิภาพต่างๆ
             ร่วมพัฒนาและดูแลโค้ดร่วมกับทีมพัฒนาซอฟต์แวร์ภายในองค์กร</p>
@@ -588,9 +726,9 @@
   <section id="contact">
     <div class="wrap connect-grid">
       <div>
-        <h2 class="section-title">Let's connect</h2>
-        <p class="connect-email">Say hello at <a href="mailto:chanintornc@sau.ac.th">chanintornc@sau.ac.th</a></p>
-        <p class="connect-resume">For more info, here's my <a href="#">resume</a></p>
+        <h2 class="head-title">Let's connect</h2>
+        <p class="connect-email">Say hello at <a href="fourrocky123@gmail.com">fourrocky123@gmail.com</a></p>
+        <p class="connect-resume">For more info, here's my <a href="#">Resume</a></p>
         <div class="connect-social">
           <span class="icon-plain" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24">
@@ -635,13 +773,13 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" required></textarea>
         </div>
-        <button type="submit" class="btn submit-btn">Submit</button>
+        <button type="submit" class="submit-btn">Submit</button>
       </form>
     </div>
   </section>
 
   <footer>
-    © 2025 Created by SAU-Dev-Team
+    © 2026 Created by DTI-SAU-TEAM
   </footer>
 
 </body>
